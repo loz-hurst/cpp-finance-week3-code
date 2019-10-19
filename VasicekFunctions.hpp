@@ -37,24 +37,24 @@ struct VasicekData {
  * Calculate and return the bond price at time 0
  * Arguments:
  *   data - parameters for the bond
- *   T - maturity time
+ *   t - maturity time
  */
-double VasicekBondPrice(VasicekData data, double T);
+double VasicekBondPrice(VasicekData data, double t);
 
 /*
  * Utility function to calculate part of the bond price
  * Arguments:
  *   data - Vasicek bond data
- *   T - maturity time
+ *   t - maturity time
  */
-double A(VasicekData data, double T);
+double A(VasicekData data, double t);
 
 /*
  * Utility function to calculate part of the bond price
  * Arguments:
  *   data - Vasicek bond data
- *   T - maturity time
+ *   t - maturity time
  */
-double B(VasicekData data, double T);
+double B(VasicekData data, double t);
 
 #endif //WEEK_3_VASICEKFUNCTIONS_HPP

@@ -25,16 +25,16 @@
 #include "VasicekFunctions.hpp"
 #include <cmath>
 
-double VasicekBondPrice(const VasicekData data, const double T) {
+double VasicekBondPrice(const VasicekData data, const double t) {
     //formula for the bond price at time 0
-    return A(data,T) * std::exp(data.r0*B(data,T) );
+    return A(data,t) * std::exp(data.r0*B(data,t) );
 }
 
-double A(const VasicekData data, const double T) {
-    //fill in the function here
+double A(const VasicekData data, const double t) {
+    // fill in the function here
     return 1.0;
 }
 
-double B(const VasicekData data, const double T) {
-    return (1-std::exp(-data.alpha*T))/(data.alpha);
+double B(const VasicekData data, const double t) {
+    return (1-std::exp(-data.alpha*t))/(data.alpha);
 }
