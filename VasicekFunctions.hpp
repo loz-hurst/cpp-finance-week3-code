@@ -26,8 +26,7 @@
 #define WEEK_3_VASICEKFUNCTIONS_HPP
 
 // structure for variables required to calculate Vasicek bonds
-struct VasicekData
-{
+struct VasicekData {
     double r0;
     double alpha;
     double mu;

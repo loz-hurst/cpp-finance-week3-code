@@ -28,11 +28,12 @@
 int main() {
 
     // Exercise 1
-
     // r0, alpha, mu, sigma
     const VasicekData v_data {0.08, 0.2, 0.1, 0.03};
     const double T = 2.0;
     std::cout << "Bond price is: " << VasicekBondPrice(v_data, T) << std::endl;
+
+
     return 0;
 }
 
