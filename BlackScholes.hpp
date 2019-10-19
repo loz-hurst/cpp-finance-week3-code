@@ -1,5 +1,5 @@
 /*
- * Code for week 3 exercises of C++ for Finance.
+ * Black-Scholes functions for week 3 exercises of C++ for Finance.
  *
  * Copyright 2019 Laurence Alexander Hurst
  *
@@ -22,24 +22,19 @@
  * full licence.
  */
 
-#include "VasicekFunctions.hpp"
-#include "BlackScholes.hpp"
-#include <iostream>
+#ifndef WEEK_3_BLACKSCHOLES_HPP
+#define WEEK_3_BLACKSCHOLES_HPP
 
-int main() {
+// structure for variables required to calculate Black-Scholes options
+struct BlackScholes {
+    double value;
+    double strike;
+    double maturity;
+    double rate;
+    double sigma;
+};
 
-    // Exercise 3
-    // r0, alpha, mu, sigma
-    const VasicekData v_data {0.08, 0.2, 0.1, 0.03};
-    const double t = 2.0;
-    std::cout << "Bond price is: " << VasicekBondPrice(v_data, t) << std::endl;
+// Calculate the Black-Scholes call price for the given data
+double BsCall(const BlackScholes&);
 
-    // Exercise 4
-    // value, strike, maturity, rate, sigma
-    const BlackScholes bs_data {20, 25, 0.25, 0.05, 0.24};
-    std::cout << "Black-Scholes call price is " << BsCall(bs_data) << std::endl;
-    //std::cout << "Black-Scholes put price is " << BsPut(bs_data) << std::endl;
-
-    return 0;
-}
-
+#endif //WEEK_3_BLACKSCHOLES_HPP

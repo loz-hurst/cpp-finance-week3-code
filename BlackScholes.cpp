@@ -1,5 +1,5 @@
 /*
- * Code for week 3 exercises of C++ for Finance.
+ * Black-Scholes functions for week 3 exercises of C++ for Finance.
  *
  * Copyright 2019 Laurence Alexander Hurst
  *
@@ -22,24 +22,29 @@
  * full licence.
  */
 
-#include "VasicekFunctions.hpp"
 #include "BlackScholes.hpp"
-#include <iostream>
+#include "mathutils.hpp"
+#include <cmath>
 
-int main() {
+double BsCall(const BlackScholes &data)
+{
+    // Using formula C(St,t)=N(d1)St - N(d2)PV(K)
 
-    // Exercise 3
-    // r0, alpha, mu, sigma
-    const VasicekData v_data {0.08, 0.2, 0.1, 0.03};
-    const double t = 2.0;
-    std::cout << "Bond price is: " << VasicekBondPrice(v_data, t) << std::endl;
+    // This value gets used a couple of times, so calculate it once
+    double sig_sqrt_t = data.sigma*std::sqrt(data.maturity);
 
-    // Exercise 4
-    // value, strike, maturity, rate, sigma
-    const BlackScholes bs_data {20, 25, 0.25, 0.05, 0.24};
-    std::cout << "Black-Scholes call price is " << BsCall(bs_data) << std::endl;
-    //std::cout << "Black-Scholes put price is " << BsPut(bs_data) << std::endl;
+    // PV(K)
+    double pv_k = data.strike*std::exp(-data.rate*data.maturity);
 
-    return 0;
+    // d1
+    double d1 = (std::log(data.value/data.strike) + (data.rate + 0.5*data.sigma*data.sigma) * data.maturity)/sig_sqrt_t;
+
+    // d2
+    double d2 = d1 - sig_sqrt_t;
+
+    // Normal values
+    double n1 = mathutils::normal(d1);
+    double n2 = mathutils::normal(d2);
+
+    return data.value*n1 - pv_k*n2;
 }
-
