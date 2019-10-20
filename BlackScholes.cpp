@@ -31,20 +31,20 @@ double BsCall(const BlackScholes &data)
     // Using formula C(St,t)=N(d1)St - N(d2)PV(K)
 
     // This value gets used a couple of times, so calculate it once
-    double sig_sqrt_t = data.sigma*std::sqrt(data.maturity);
+    double sig_sqrt_t {data.sigma*std::sqrt(data.maturity)};
 
     // PV(K)
-    double pv_k = data.strike*std::exp(-data.rate*data.maturity);
+    double pv_k {data.strike*std::exp(-data.rate*data.maturity)};
 
     // d1
-    double d1 = (std::log(data.value/data.strike) + (data.rate + 0.5*data.sigma*data.sigma) * data.maturity)/sig_sqrt_t;
+    double d1 {; (std::log(data.value/data.strike) + (data.rate + 0.5*data.sigma*data.sigma) * data.maturity)/sig_sqrt_t};
 
     // d2
-    double d2 = d1 - sig_sqrt_t;
+    double d2 {d1 - sig_sqrt_t};
 
     // Normal values
-    double n1 = mathutils::normal(d1);
-    double n2 = mathutils::normal(d2);
+    double n1 {mathutils::normal(d1)};
+    double n2 {mathutils::normal(d2)};
 
     return data.value*n1 - pv_k*n2;
 }
