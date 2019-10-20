@@ -30,7 +30,7 @@ namespace mathutils {
         double taylor{1};
 
         for (long i{0}; n > i; ++i) {
-            term *= x / i;
+            term *= x / (i+1);
             taylor += term;
         }
 
