@@ -26,7 +26,7 @@
 
 namespace mathutils {
     // Approximate e^x using n terms of the Taylor series
-    double exp(double x, double n);
+    double exp(double x, long n);
 }
 
 #endif //WEEK_3_EXP_HPP
