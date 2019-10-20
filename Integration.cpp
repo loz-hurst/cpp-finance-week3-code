@@ -58,8 +58,7 @@ namespace integrals {
     }
 
     double simpsons_f1(const double a, const double b, const long n) {
-        if (0==(n % 2))
-        {
+        if (0==(n % 2)) {
             std::cerr << "n must be odd for Simpson" << std::endl;
             return 0;
         }
@@ -83,8 +82,7 @@ namespace integrals {
     }
 
     double simpsons_f2(const double a, const double b, const long n) {
-        if (0==(n % 2))
-        {
+        if (0==(n % 2)) {
             std::cerr << "n must be odd for Simpson" << std::endl;
             return 0;
         }
