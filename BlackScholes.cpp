@@ -37,7 +37,7 @@ double BsCall(const BlackScholes &data)
     double pv_k {data.strike*std::exp(-data.rate*data.maturity)};
 
     // d1
-    double d1 {; (std::log(data.value/data.strike) + (data.rate + 0.5*data.sigma*data.sigma) * data.maturity)/sig_sqrt_t};
+    double d1 {(std::log(data.value/data.strike) + (data.rate + 0.5*data.sigma*data.sigma) * data.maturity)/sig_sqrt_t};
 
     // d2
     double d2 {d1 - sig_sqrt_t};
