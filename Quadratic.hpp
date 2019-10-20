@@ -1,5 +1,5 @@
 /*
- * Maths utilities for week 3 exercises of C++ for Finance.
+ * Quadratic function for week 3 exercises of C++ for Finance.
  *
  * Copyright 2019 Laurence Alexander Hurst
  *
@@ -22,11 +22,13 @@
  * full licence.
  */
 
-#ifndef WEEK_3_MATHUTILS_HPP
-#define WEEK_3_MATHUTILS_HPP
+#ifndef WEEK_3_QUADRATIC_HPP
+#define WEEK_3_QUADRATIC_HPP
 
-namespace mathutils {
-    // normal cumulative distribution function
-    double normal(double);
-}
-#endif //WEEK_3_MATHUTILS_HPP
+/*
+ * Finds (by brute force) and prints all integers z in range 1 < z <= n that
+ * can be represented as x^2+y^2 where x and y are also integers.
+ */
+void FindZ(long n);
+
+#endif //WEEK_3_QUADRATIC_HPP

@@ -1,5 +1,5 @@
 /*
- * Maths utilities for week 3 exercises of C++ for Finance.
+ * Quadratic function for week 3 exercises of C++ for Finance.
  *
  * Copyright 2019 Laurence Alexander Hurst
  *
@@ -22,11 +22,21 @@
  * full licence.
  */
 
-#ifndef WEEK_3_MATHUTILS_HPP
-#define WEEK_3_MATHUTILS_HPP
+#include "Quadratic.hpp"
+#include <cmath>
+#include <iostream>
+#include <ctime>
 
-namespace mathutils {
-    // normal cumulative distribution function
-    double normal(double);
+void FindZ(const long n) {
+    const clock_t start_time {std::clock()};
+    unsigned int counter {0}; // Increment this every time you find one
+
+    // Fill this in
+
+    const clock_t end_time {std::clock()};
+    const clock_t time_delta {end_time - start_time};
+    std::cout << "Found " << counter << " values" <<
+        "in " << time_delta << " clock ticks" <<
+        " (" << time_delta/CLOCKS_PER_SEC << " seconds)" <<
+        std::endl;
 }
-#endif //WEEK_3_MATHUTILS_HPP

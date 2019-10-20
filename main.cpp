@@ -26,6 +26,7 @@
 #include "BlackScholes.hpp"
 #include "Average.hpp"
 #include "Integration.hpp"
+#include "Quadratic.hpp"
 #include <iostream>
 
 int main() {
@@ -56,6 +57,9 @@ int main() {
     std::cout << "Numerical integral of f2 (trap):\t" << integrals::trapezium_f2(integ_a, integ_b, integ_n) << std::endl;
     std::cout << "Numerical integral of f2 (Simp):\t" << integrals::simpsons_f2(integ_a, integ_b, integ_n) << std::endl;
     std::cout << "Actual integral of f2:\t\t\t" << integrals::i2(integ_a, integ_b) << std::endl;
+
+    // Exercise 7
+    FindZ(100);
 
     return 0;
 }
