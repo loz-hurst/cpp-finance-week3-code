@@ -1,5 +1,5 @@
 /*
- * Code for week 3 exercises of C++ for Finance.
+ * Average functions for week 3 exercises of C++ for Finance.
  *
  * Copyright 2019 Laurence Alexander Hurst
  *
@@ -22,29 +22,10 @@
  * full licence.
  */
 
-#include "VasicekFunctions.hpp"
-#include "BlackScholes.hpp"
-#include "Average.hpp"
-#include <iostream>
+#ifndef WEEK_3_AVERAGE_HPP
+#define WEEK_3_AVERAGE_HPP
 
-int main() {
+// Read in values from the user and output the arithmetic mean
+void ArithmeticMean();
 
-    // Exercise 3
-    // r0, alpha, mu, sigma
-    const VasicekData v_data {0.08, 0.2, 0.1, 0.03};
-    const double t {2.0};
-    std::cout << "Bond price is: " << VasicekBondPrice(v_data, t) << std::endl;
-
-    // Exercise 4
-    // value, strike, maturity, rate, sigma
-    const BlackScholes bs_data {20, 25, 0.25, 0.05, 0.24};
-    std::cout << "Black-Scholes call price is " << BsCall(bs_data) << std::endl;
-    //std::cout << "Black-Scholes put price is " << BsPut(bs_data) << std::endl;
-
-    // Exercise 5
-    ArithmeticMean();
-    //GeometricMean();
-
-    return 0;
-}
-
+#endif //WEEK_3_AVERAGE_HPP
